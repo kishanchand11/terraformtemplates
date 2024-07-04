@@ -40,3 +40,5 @@ resource "aws_instance" "kubernetes_slave" {
     Name = "kubernetes_slave"
   }
 }
+
+#worked
