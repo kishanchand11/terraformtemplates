@@ -1,0 +1,42 @@
+provider "aws" {
+  region  = "us-east-1"
+  access_key = "enter accesss key"
+  secret_key = "enter secret key"
+}
+
+# instances
+
+resource "aws_instance" "jenkins_master" {
+  ami                    = "ami-0e001c9271cf7f3b9"
+  instance_type          = "t2.medium"
+  availability_zone       = "us-east-1a"
+  key_name               = "new"
+  
+
+  tags = {
+    Name = "jenkins_master"
+  }
+}
+
+resource "aws_instance" "kubernetes_master" {
+  ami                    = "ami-0e001c9271cf7f3b9"
+  instance_type          = "t2.medium"
+  availability_zone       = "us-east-1a"
+  key_name               = "new"
+  
+  tags = {
+    Name = "kubernetes_master"
+  }
+}
+
+resource "aws_instance" "kubernetes_slave" {
+  ami                    = "ami-0e001c9271cf7f3b9"
+  instance_type          = "t2.medium"
+  availability_zone       = "us-east-1a"
+  key_name               = "new"
+  
+
+  tags = {
+    Name = "kubernetes_slave"
+  }
+}
